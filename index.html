@@ -107,8 +107,8 @@ session_start();
                                 <input type="username" name="username" placeholder="أدخل اسم المشرف">
                                 <p>كلمة السر</p>
                                 <input type="password" name="passs" placeholder="ادخل كلمة السر للمشرف">
-                                <a href="admin_document/indexduc.html"> <input type="submit" name="loginduc"
-                                        value="اضافة مشرف"></a>
+                                 <input type="submit" name="loginduc"
+                                        value="اضافة مشرف">
 
                             </center>
                         </form>
@@ -138,8 +138,8 @@ session_start();
                                 <input type="username" name="username" placeholder="أدخل اسم المشرف">
                                 <p>كلمة السر</p>
                                 <input type="password" name="passs" placeholder="ادخل كلمة السر للمشرف">
-                                <a href="admin_search/indexser.html"> <input type="submit" name="loginser"
-                                        value="اضافة مشرف "></a>
+                                 <input type="submit" name="loginser"
+                                        value="اضافة مشرف ">
 
                             </center>
                         </form>
@@ -160,35 +160,6 @@ session_start();
 
 
 
-
-    <?php
-    $con = mysqli_connect('localhost', 'root');
-    mysqli_select_db($con, 'databaseunivercetytaiz');
-
-
-    if (isset($_POST['sub'])) {
-        $uname = $con->real_escape_string($_POST['adminn']);
-
-        $query = "SELECT * FROM admin WHERE adminn = '$uname' ";
-        $rs = $con->query($query);
-        $num = $rs->num_rows;
-        $rows = $rs->fetch_assoc();
-        if ($num > 0) {
-            session_start();
-            $_SESSION['adminn'] = $rows['adminn'];
-
-            echo "<script type = \"text/javascript\">
-         
-            window.location = (\"saperadmin.php\")
-            </script>";
-        } else {
-            echo "<script type = \"text/javascript\">
-           
-            window.location = (\"../index.php\")
-            </script>";
-        }
-    }
-    ?>
 
 
 
